@@ -5,6 +5,13 @@ Wedding::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
 
+  get '/our_story',       to: 'static_pages#our_story'
+  get '/wedding_party',   to: 'static_pages#wedding_party'
+  get '/events',          to: 'static_pages#events'
+  get '/accommodations',  to: 'static_pages#accommodations'
+  get '/guestbook',       to: 'static_pages#guestbook'
+  get '/registries',      to: 'static_pages#registries'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
