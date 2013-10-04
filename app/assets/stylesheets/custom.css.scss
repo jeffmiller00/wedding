@@ -11,9 +11,15 @@ $grayMediumLight: #eaeaea;
 }
 
 /* universal */
-
 html {
   overflow-y: scroll;
+}
+
+// Twitter Bootstrap override
+.container {
+  width: inherit;
+  margin-left: inherit;
+  margin-right: inherit;
 }
 
 textarea {
@@ -26,6 +32,7 @@ textarea {
     margin-bottom: 10px;
   }
 }
+
 
 /* typography */
 
@@ -71,6 +78,7 @@ header#masthead h1 {
   line-height: 300px;
 }
 
+
 /* footer */
 
 footer {
@@ -80,9 +88,6 @@ footer {
   color: $grayLight;
   a {
     color: $gray;
-    &:hover { 
-      color: $grayDarker;
-    }
   }  
   ul {
     float: right;
@@ -99,6 +104,7 @@ footer {
   background-position: center bottom;
   height: 150px;
 }
+
 
 /* miscellaneous */
 

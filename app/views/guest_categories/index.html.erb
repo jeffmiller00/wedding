@@ -1,0 +1,29 @@
+<h1>Listing guest_categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default likelihood</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @guest_categories.each do |guest_category| %>
+      <tr>
+        <td><%= guest_category.name %></td>
+        <td><%= guest_category.default_likelihood %></td>
+        <td><%= link_to 'Show', guest_category %></td>
+        <td><%= link_to 'Edit', edit_guest_category_path(guest_category) %></td>
+        <td><%= link_to 'Destroy', guest_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Guest category', new_guest_category_path %>

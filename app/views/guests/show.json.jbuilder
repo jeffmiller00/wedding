@@ -1,0 +1,1 @@
+json.extract! @guest, :first, :last, :guest_name, :num_invited, :likelihood, :guest_category_id, :rsvp_adults, :rsvp_children, :address, :city, :state, :zip, :relationship, :comments, :created_at, :updated_at

@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First:</strong>
+  <%= @guest.first %>
+</p>
+
+<p>
+  <strong>Last:</strong>
+  <%= @guest.last %>
+</p>
+
+<p>
+  <strong>Guest name:</strong>
+  <%= @guest.guest_name %>
+</p>
+
+<p>
+  <strong>Num invited:</strong>
+  <%= @guest.num_invited %>
+</p>
+
+<p>
+  <strong>Likelihood:</strong>
+  <%= @guest.likelihood %>
+</p>
+
+<p>
+  <strong>Guest category:</strong>
+  <%= @guest.guest_category %>
+</p>
+
+<p>
+  <strong>Rsvp adults:</strong>
+  <%= @guest.rsvp_adults %>
+</p>
+
+<p>
+  <strong>Rsvp children:</strong>
+  <%= @guest.rsvp_children %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @guest.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @guest.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @guest.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @guest.zip %>
+</p>
+
+<p>
+  <strong>Relationship:</strong>
+  <%= @guest.relationship %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @guest.comments %>
+</p>
+
+<%= link_to 'Edit', edit_guest_path(@guest) %> |
+<%= link_to 'Back', guests_path %>
