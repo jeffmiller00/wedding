@@ -1,0 +1,11 @@
+<%= form_tag("/rsvp/confirm", method: "post") do %>
+  <div class="field">
+    <%= radio_button_tag(:rsvp, "yes") %>
+    <%= label_tag(:rsvp_yes, "I'm in!") %>
+    <%= radio_button_tag(:rsvp, "no") %>
+    <%= label_tag(:rsvp_no, "I can't come... :(") %>
+  </div>
+  <div class="actions">
+    <%= submit_tag("RSVP for me!") %>
+  </div>
+<% end %>

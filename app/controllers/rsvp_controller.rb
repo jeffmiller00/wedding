@@ -1,4 +1,5 @@
 class RsvpController < ApplicationController
+  before_action :set_guest
 
   def index
     @guest = Guest.new
@@ -46,18 +47,14 @@ class RsvpController < ApplicationController
     end
   end
 
+  def confirm
+    @guest.rsvp params[:rsvp]
+    redirect_to :action => 'view', :ext_id => @guest.ext_id
+  end
 
-=begin
-    session[:person_id] = nil
-    @person = Person.new
-    if request.post?
-      @person = Person.where(:is_adult => true, :is_guest => false).find(:first, :conditions => ["lower(first_name) = ? and lower(last_name) = ?", params[:person][:first_name].downcase.strip, params[:person][:last_name].downcase.strip])
-      if @person.nil?
-        flash[:notice] = "I'm sorry, I can't seem to find your record."
-      else
-        session[:person_id] = @person.id
-        redirect_to :action => :disclaimer
-      end
+
+  private
+    def set_guest
+      @guest = Guest.find(params[:id] || session[:guest_id])
     end
-=end
 end

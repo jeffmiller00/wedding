@@ -13,4 +13,13 @@
     <strong>Last:</strong>
     <%= @guest.last %>
   </p>
+
+  <% if @guest.rsvp_adults.nil? %>
+    <%= render 'confirm' %>
+  <% else %>
+    <p>
+      <strong>You're RSVP'd for:</strong>
+      <%= @guest.rsvp_adults %>
+    </p>
+  <% end %>
 <% end %>

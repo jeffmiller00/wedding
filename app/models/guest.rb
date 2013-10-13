@@ -37,4 +37,13 @@ class Guest < ActiveRecord::Base
 
     @guest = Guest.where(sql, guest_params) 
   end
+
+  def rsvp how_many
+    if how_many = 'yes'
+      self.rsvp_adults = self.num_invited
+    else
+      self.rsvp_adults = 0
+    end
+    self.save!
+  end
 end
