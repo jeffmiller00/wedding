@@ -1,3 +1,5 @@
+require 'digest/md5'
+
 Wedding::Application.routes.draw do
   resources :guests
 
@@ -15,6 +17,23 @@ Wedding::Application.routes.draw do
   get '/accommodations',  to: 'static_pages#accommodations'
   get '/guestbook',       to: 'static_pages#guestbook'
   get '/registries',      to: 'static_pages#registries'
+
+  get 'rsvp' => "rsvp#index"
+  post 'rsvp' => "rsvp#find"
+  get 'rsvp/:ext_id' => 'rsvp#view'
+  post 'rsvp/' => 'rsvp#view'
+
+=begin
+  get 'rsvp/:dig' do
+    get 'rsvp/Digest::MD5.hexdigest( :dig )' => 'rsvp#view'
+  end
+=end
+  #match 'disclaimer' => 'rsvp#disclaimer'
+  #match 'details' => 'rsvp#details'
+  #match 'confirm' => 'rsvp#confirm'
+  #match 'finished' => 'rsvp#finished'
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
