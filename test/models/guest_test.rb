@@ -33,5 +33,9 @@ class GuestTest < ActiveSupport::TestCase
     assert_equal nil, Guest.find_guest(first: "First")
     assert_equal nil, Guest.find_guest(last: "Last")
     assert_equal nil, Guest.find_guest(city: "City")
-  end  
+  end
+
+  def test_that_rsvp_works_with_adults_value
+    assert_equal @guest.rsvp_adults, @guest.rsvp 5
+  end
 end

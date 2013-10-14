@@ -48,7 +48,11 @@ class RsvpController < ApplicationController
   end
 
   def confirm
-    @guest.rsvp params[:rsvp]
+    if params[:decline]
+      @guest.rsvp 0, 0
+    else
+      @guest.rsvp params['guest'][:rsvp_adults], params['guest'][:rsvp_children]
+    end
     redirect_to :action => 'view', :ext_id => @guest.ext_id
   end
 

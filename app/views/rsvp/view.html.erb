@@ -1,19 +1,4 @@
 <% if @guest %>
-  <p>
-    <strong>ID:</strong>
-    <%= @guest.id %>
-  </p>
-
-  <p>
-    <strong>First:</strong>
-    <%= @guest.first %>
-  </p>
-
-  <p>
-    <strong>Last:</strong>
-    <%= @guest.last %>
-  </p>
-
   <% if @guest.rsvp_adults.nil? %>
     <%= render 'confirm' %>
   <% else %>

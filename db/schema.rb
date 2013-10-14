@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131012041935) do
+ActiveRecord::Schema.define(version: 20131014002231) do
 
   create_table "guest_categories", force: true do |t|
     t.string   "name"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20131012041935) do
   create_table "guests", force: true do |t|
     t.string   "first"
     t.string   "last"
-    t.integer  "num_invited"
+    t.integer  "invited_adults"
     t.integer  "likelihood"
     t.integer  "guest_category_id"
     t.integer  "rsvp_adults"
@@ -36,8 +36,10 @@ ActiveRecord::Schema.define(version: 20131012041935) do
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "guest_name"
+    t.string   "guest_first"
     t.string   "ext_id"
+    t.integer  "invited_children"
+    t.string   "guest_last"
   end
 
   add_index "guests", ["guest_category_id"], name: "index_guests_on_guest_category_id", using: :btree

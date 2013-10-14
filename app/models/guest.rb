@@ -23,12 +23,12 @@ class Guest < ActiveRecord::Base
     guest_params = {}
 
     if ! first.blank?
-      sql << ' AND TRIM(LOWER(first)) = :first_name '
-      guest_params[:first_name] = first.downcase.strip
+      sql << ' AND (TRIM(LOWER(first)) = :first_name OR TRIM(LOWER(guest_first)) = :guest_first) '
+      guest_params[:first_name] = guest_params[:guest_first] = first.downcase.strip
     end
     if ! last.blank?
-      sql << ' AND TRIM(LOWER(last)) = :last_name '
-      guest_params[:last_name] = last.downcase.strip
+      sql << ' AND (TRIM(LOWER(last)) = :last_name OR TRIM(LOWER(guest_last)) = :guest_last) '
+      guest_params[:last_name] = guest_params[:guest_last] = last.downcase.strip
     end
     if ! city.blank?
       sql << ' AND TRIM(LOWER(city)) = :city '
@@ -38,11 +38,16 @@ class Guest < ActiveRecord::Base
     @guest = Guest.where(sql, guest_params) 
   end
 
-  def rsvp how_many
-    if how_many = 'yes'
-      self.rsvp_adults = self.num_invited
+  def rsvp(num_adults, num_children)
+    if num_adults && num_adults.to_i
+      self.rsvp_adults = num_adults
     else
       self.rsvp_adults = 0
+    end
+    if num_children && num_children.to_i
+      self.rsvp_children = num_children
+    else
+      self.rsvp_children = 0
     end
     self.save!
   end

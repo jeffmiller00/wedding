@@ -1,11 +1,56 @@
-<%= form_tag("/rsvp/confirm", method: "post") do %>
+<%= form_for @guest, url: {action: 'confirm'} do |f| %>
   <div class="field">
-    <%= radio_button_tag(:rsvp, "yes") %>
-    <%= label_tag(:rsvp_yes, "I'm in!") %>
-    <%= radio_button_tag(:rsvp, "no") %>
-    <%= label_tag(:rsvp_no, "I can't come... :(") %>
+    <%= f.label :first %><br>
+    <%= f.text_field :first %>
   </div>
+
+  <div class="field">
+    <%= f.label :last %><br>
+    <%= f.text_field :last %>
+  </div>
+
+  <div class="field">
+    <%= f.label :guest_first %><br>
+    <%= f.text_field :guest_first %>
+  </div>
+
+  <div class="field">
+    <%= f.label :guest_last %><br>
+    <%= f.text_field :guest_last %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zip %><br>
+    <%= f.text_field :zip %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rsvp_adults %><br>
+    <%= f.number_field :rsvp_adults, { :value => @guest.invited_adults, :min => 0, :max => [(@guest.invited_adults*2).ceil,2].max } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rsvp_children %><br>
+    <%= f.number_field :rsvp_children, { :value => @guest.invited_children, :min => 0, :max => [(@guest.invited_children*2).ceil,2].max } %>
+  </div>
+
   <div class="actions">
-    <%= submit_tag("RSVP for me!") %>
+    <%= f.submit "I'm in!" %>
+    <%= f.submit "I can't come... :(", :name => "decline" %>
   </div>
 <% end %>

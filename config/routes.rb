@@ -21,7 +21,7 @@ Wedding::Application.routes.draw do
   get 'rsvp' => "rsvp#index"
   post 'rsvp' => "rsvp#find"
   get 'rsvp/:ext_id' => 'rsvp#view'
-  post 'rsvp/confirm' => 'rsvp#confirm'
+  patch 'rsvp/confirm' => 'rsvp#confirm'
 
 =begin
   get 'rsvp/:dig' do
