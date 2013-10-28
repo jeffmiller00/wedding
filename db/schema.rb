@@ -21,25 +21,25 @@ ActiveRecord::Schema.define(version: 20131014002231) do
   end
 
   create_table "guests", force: true do |t|
+    t.string   "ext_id"
     t.string   "first"
     t.string   "last"
     t.integer  "invited_adults"
-    t.integer  "likelihood"
-    t.integer  "guest_category_id"
+    t.integer  "invited_children"
     t.integer  "rsvp_adults"
     t.integer  "rsvp_children"
+    t.integer  "likelihood"
+    t.integer  "guest_category_id"
     t.string   "address"
     t.string   "city"
     t.string   "state"
     t.string   "zip"
     t.string   "relationship"
+    t.string   "guest_first"
+    t.string   "guest_last"
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "guest_first"
-    t.string   "ext_id"
-    t.integer  "invited_children"
-    t.string   "guest_last"
   end
 
   add_index "guests", ["guest_category_id"], name: "index_guests_on_guest_category_id", using: :btree
