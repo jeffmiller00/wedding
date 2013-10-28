@@ -11,37 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131014002231) do
+ActiveRecord::Schema.define(version: 20130415120603) do
 
-  create_table "guest_categories", force: true do |t|
+  create_table "services", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "services", ["user_id"], name: "index_services_on_user_id", using: :btree
+
+  create_table "users", force: true do |t|
     t.string   "name"
-    t.integer  "default_likelihood"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "guests", force: true do |t|
-    t.string   "first"
-    t.string   "last"
-    t.integer  "invited_adults"
-    t.integer  "likelihood"
-    t.integer  "guest_category_id"
-    t.integer  "rsvp_adults"
-    t.integer  "rsvp_children"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
-    t.string   "relationship"
-    t.string   "comments"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "guest_first"
-    t.string   "ext_id"
-    t.integer  "invited_children"
-    t.string   "guest_last"
-  end
-
-  add_index "guests", ["guest_category_id"], name: "index_guests_on_guest_category_id", using: :btree
 
 end
