@@ -1,14 +1,17 @@
 .navbar.navbar-fixed-top
   .navbar-inner
     .container
-      = link_to Rails.application.class.parent_name, root_path, class: 'brand'
+      = link_to 'K&J', root_path, class: 'brand'
       %ul.nav
         %li.active
-          %a{:title => 'Home', :href => '#'} Home
+          %a{:title => 'Our Story', :href => our_story_path } Our Story
         %li
-          %a{:title => 'Home', :href => '#'} Link 1
+          %a{:title => 'Wedding Party', :href => wedding_party_path } Wedding Party
         %li
-          %a{:title => 'Home', :href => '#'} Link 2
+          %a{:title => 'Wedding Events', :href => events_path } Wedding Events
         %li
-          %a{:title => 'Home', :href => '#'} Link 3
-
+          %a{:title => 'Accommodations', :href => accommodations_path } Accommodations
+        %li
+          %a{:title => 'Guestbook', :href => guestbook_path } Guestbook
+        %li
+          %a{:title => 'Regestries', :href => registries_path } Regestries
