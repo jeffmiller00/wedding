@@ -1,21 +1,40 @@
 body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  background-image: image-url('ivory_pattern.jpg');
+  background-repeat: repeat-x;
+  background-position: center top;
+  color: #7B633A;
+  font-family: 'Sorts Mill Goudy', serif;
+  padding-bottom: 50px;
+}
+
+body .navbar .nav {
+  font-size: inherit;
+}
+
+div.contentBg {
+  background-color: #FEF6EB;
+  padding: 20px;
+  text-align: justify;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 1.25em;
+  font-family: 'Sorts Mill Goudy', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #8C001A;
+  font-family: 'Diplomata SC', cursive;
 }
 
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
+}
+
+img {
+  margin-bottom: 15px;
 }
 
 a {
@@ -34,6 +53,18 @@ div {
     margin-bottom: 10px;
   }
 }
+
+div.container {
+  /* background-color: #F1E9DE; */
+}
+
+div a.brand {
+  font-family: 'Monsieur La Doulaise', cursive !important;
+}
+
+
+
+
 
 #notice {
   color: green;
