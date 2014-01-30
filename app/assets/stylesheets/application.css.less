@@ -9,8 +9,15 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= stub stubs/variables_overrides.css.less
+ *= static_pages.css.scss
  *= require_self
  *= require_tree .
  */
 
-@import "stubs/variables_overrides.css.less";
+body {
+  background-image: image-url('ivory_pattern.jpg');
+  background-repeat: repeat;
+  background-position: center top;
+  color: #7B633A !important;
+  font-family: 'Sorts Mill Goudy', serif;
+}

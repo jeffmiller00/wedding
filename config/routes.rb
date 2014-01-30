@@ -12,12 +12,15 @@ Wedding::Application.routes.draw do
   root 'static_pages#home'
 
   get '/our_story',       to: 'static_pages#our_story'
+  get '/proposal',        to: 'static_pages#proposal'
   get '/wedding_party',   to: 'static_pages#wedding_party'
   get '/events',          to: 'static_pages#events'
   get '/accommodations',  to: 'static_pages#accommodations'
-  get '/guestbook',       to: 'static_pages#guestbook'
-  get '/registries',      to: 'static_pages#registries'
 
+  get '/guestbook',       to: 'static_pages#coming'
+  get '/registries',      to: 'static_pages#coming'
+
+  get 'rsvp' => "static_pages#coming"
   get 'rsvp' => "rsvp#index"
   post 'rsvp' => "rsvp#find"
   get 'rsvp/:ext_id' => 'rsvp#view'
