@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+li {
+  list-style-position: inside;
+}
+
 .center {
   text-align: center;
 }
@@ -24,4 +28,38 @@ img.paragraph_right {
 img.paragraph_center {
   display: block;
   margin: 0 auto;
+}
+
+h5, h6 {
+  font-family: 'Sorts Mill Goudy', serif;
+  font-size: 1.5em;
+  color: #7B633A;
+}
+
+#shannon, #samantha, #denise, #amy, #heidi {
+  border: 2px solid #8C001A;
+  width: 33%;
+  float: right;
+  margin-left: 30px;
+}
+
+#haley, #maggie, #jessica {
+  border: 2px solid #8C001A;
+  width: 33%;
+  float: left;
+  margin-right: 30px;
+}
+
+#michelle {
+  border: 2px solid #8C001A;
+  width: 7.75%;
+  float: left;
+  margin-right: 15px;
+}
+
+#katie {
+  border: 2px solid #8C001A;
+  width: 16%;
+  float: left;
+  margin-right: 15px;
 }
