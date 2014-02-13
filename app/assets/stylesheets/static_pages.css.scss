@@ -2,12 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background-image: image-url('ivory_pattern.jpg');
+  background-repeat: repeat;
+  background-position: center top;
+  color: #7B633A;
+  font-family: 'Sorts Mill Goudy', serif;
+}
+
 li {
   list-style-position: inside;
 }
 
 .center {
   text-align: center;
+}
+
+body .navbar .nav {
+  font-size: inherit;
+}
+
+div.contentBg {
+  background-color: #FEF6EB;
+  padding: 20px;
+  text-align: justify;
+}
+
+p, ol, ul, td {
+  font-size: 1.25em;
+  font-family: 'Sorts Mill Goudy', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #8C001A;
+  font-family: 'Diplomata SC', cursive;
 }
 
 .homeDates {
@@ -36,25 +64,41 @@ h5, h6 {
   color: #7B633A;
 }
 
-#shannon, #samantha, #denise, #amy, #heidi {
+/*** Our Story ***/
+
+
+/*** Proposal ***/
+#engagement1 {
   border: 2px solid #8C001A;
-  width: 33%;
+  width: 10%;
+  float: left;
+  margin-right: 15px;
+}
+
+#engagement2 {
+  border: 2px solid #8C001A;
+  width: 30%;
   float: right;
   margin-left: 30px;
 }
 
-#haley, #maggie, #jessica {
+#engagement3 {
   border: 2px solid #8C001A;
-  width: 33%;
+  width: 30%;
   float: left;
   margin-right: 30px;
 }
 
-#michelle {
+#engagement4 {
   border: 2px solid #8C001A;
-  width: 7.75%;
-  float: left;
-  margin-right: 15px;
+  width: 100%;
+}
+
+
+/*** Wedding Party ***/
+
+img.wedding_party {
+  border: 2px solid #8C001A;
 }
 
 #katie {
