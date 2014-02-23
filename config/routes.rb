@@ -18,7 +18,7 @@ Wedding::Application.routes.draw do
   get '/accommodations',  to: 'static_pages#accommodations'
 
   get '/guestbook',       to: 'posts#index'
-  get '/registries',      to: 'static_pages#coming'
+  get '/registries',      to: 'static_pages#registries'
 
   get 'rsvp' => "static_pages#coming"
   get 'rsvp' => "rsvp#index"

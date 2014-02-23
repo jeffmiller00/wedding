@@ -1,5 +1,49 @@
-<div class="span12">
-  <h2>Welcome to Our Wedding Website</h2>
-  <h3>Registries</h3>
-  <p>We have no idea how this website was created, but will be updating it often!</p>
+<h3>Registries</h3>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 contentBg">
+    <div class="row">
+    <p>Krista and Jeff are registered at Crate and Barrel and Bed, Bath and Beyond.
+    <br /><br />
+    Click the logos to view the registries.</p>
+    </div>
+
+    <div class="row">
+  <%= link_to (image_tag "cratelogo.png", {class: 'col-md-5 col-md-offset-1', alt: 'Crate & Barrel'}), 'http://www.crateandbarrel.com/Gift-Registry/Krista-Krauss-and-Jeff-Miller/r5142095', {target: '_blank', title: 'Crate & Barrel Registry'} %>
+
+  <%= link_to (image_tag "bbb.png", {class: 'col-md-5', alt: 'Bed, Bath & Beyond'}), 'http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?pwsToken=&eventType=Wedding&registryId=10878522&pwsurl=', {target: '_blank', title: 'Bed, Bath & Beyond Registry'} %>
+  </div>
+</div>
+</div>
+
+<hr />
+
+<h3>Donate to Our Honeymoon</h3>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 contentBg">
+    <p>Krista and Jeff love to travel, so they will be going on a European vacation for their honeymoon. They are very much looking forward to soaking up the culture, history and booze in England, France, Germany and Greece. If you would like to help fund their two week European adventure, you can do so below.</p>
+
+    <div class="row">
+      <div class="col-md-3">
+        <h5 class="text-center">Buy a bottle of wine  $50</h5>
+        <%= link_to (image_tag "fund_button.png", {class: 'col-md-10 col-md-offset-1', alt: 'Crate & Barrel'}), 'http://www.crateandbarrel.com/Gift-Registry/Krista-Krauss-and-Jeff-Miller/r5142095', {target: '_blank', title: 'Crate & Barrel Registry'} %>
+      </div>
+
+      <div class="col-md-3">
+        <h5 class="text-center">Purchase a dinner  $100</h5>
+        <%= link_to (image_tag "fund_button.png", {class: 'col-md-10 col-md-offset-1', alt: 'Crate & Barrel'}), 'http://www.crateandbarrel.com/Gift-Registry/Krista-Krauss-and-Jeff-Miller/r5142095', {target: '_blank', title: 'Crate & Barrel Registry'} %>
+      </div>
+
+      <div class="col-md-3">
+        <h5 class="text-center">Fund a hotel night  $200</h5>
+        <%= link_to (image_tag "fund_button.png", {class: 'col-md-10 col-md-offset-1', alt: 'Crate & Barrel'}), 'http://www.crateandbarrel.com/Gift-Registry/Krista-Krauss-and-Jeff-Miller/r5142095', {target: '_blank', title: 'Crate & Barrel Registry'} %>
+      </div>
+
+      <div class="col-md-3">
+        <h5 class="text-center">Sponsor transportation  $300</h5>
+        <%= link_to (image_tag "fund_button.png", {class: 'col-md-10 col-md-offset-1', alt: 'Crate & Barrel'}), 'http://www.crateandbarrel.com/Gift-Registry/Krista-Krauss-and-Jeff-Miller/r5142095', {target: '_blank', title: 'Crate & Barrel Registry'} %>
+      </div>
+    </div>
+  </div>
 </div>
