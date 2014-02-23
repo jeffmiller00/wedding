@@ -1,8 +1,8 @@
 require 'digest/md5'
 
 Wedding::Application.routes.draw do
+  resources :posts
   resources :guests
-
   resources :guest_categories
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -17,7 +17,7 @@ Wedding::Application.routes.draw do
   get '/events',          to: 'static_pages#events'
   get '/accommodations',  to: 'static_pages#accommodations'
 
-  get '/guestbook',       to: 'static_pages#coming'
+  get '/guestbook',       to: 'posts#index'
   get '/registries',      to: 'static_pages#coming'
 
   get 'rsvp' => "static_pages#coming"
