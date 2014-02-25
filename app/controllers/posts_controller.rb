@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.reverse
+    @is_admin = Post.admin
   end
 
   # GET /posts/1
@@ -59,6 +60,14 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url }
       format.json { head :no_content }
     end
+  end
+
+  def login
+    if params[:month].to_i == Date.today.month &&
+       params[:day].to_i   == Date.today.day
+      Post.admin = !Post.admin
+    end
+    redirect_to posts_url
   end
 
   private
