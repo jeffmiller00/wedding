@@ -51,4 +51,9 @@ gem 'unicorn'
 gem 'bootstrap-sass'
 group :development do
   gem 'rails_layout'
+
+  gem 'bullet'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
 end

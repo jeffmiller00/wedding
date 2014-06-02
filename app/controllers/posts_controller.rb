@@ -25,8 +25,9 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    if post_params[:no_data].blank?
-      @post = Post.new(post_params)
+    if post_params[:no_data].blank? && post_params[:hexy] == Digest::MD5.hexdigest(Date.today.day.to_s + Time.now.hour.to_s)
+      real_data = post_params.reject!{ |k| k == 'no_data' || k == 'hexy' }
+      @post = Post.new(real_data)
 
       respond_to do |format|
         if @post.save
@@ -82,6 +83,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:name, :email, :message, :no_data)
+      params.require(:post).permit(:name, :email, :message).merge(params.slice(:no_data, :hexy))
     end
 end
