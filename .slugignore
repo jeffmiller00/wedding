@@ -3,3 +3,5 @@ CHANGELOG.md
 LICENSE
 README.md
 VERSION
+
+.env_secrets

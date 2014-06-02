@@ -50,10 +50,10 @@ gem 'unicorn'
 #gem 'haml'
 gem 'bootstrap-sass'
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'rails_layout'
 
   gem 'bullet'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'meta_request'
 end
+gem 'google_drive'

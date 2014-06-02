@@ -1,0 +1,33 @@
+<%= form_for(@rsvp) do |f| %>
+  <% if @rsvp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rsvp.errors.count, "error") %> prohibited this rsvp from being saved:</h2>
+
+      <ul>
+      <% @rsvp.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :invited_guest_name %><br>
+    <%= f.text_field :invited_guest_name %>
+  </div>
+  <div class="field">
+    <%= f.label :plus_one? %><br>
+    <%= f.check_box :plus_one? %>
+  </div>
+  <div class="field">
+    <%= f.label :plus_one_name %><br>
+    <%= f.text_field :plus_one_name %>
+  </div>
+  <div class="field">
+    <%= f.label :meal %><br>
+    <%= f.text_field :meal %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Invited guest name:</strong>
+  <%= @rsvp.invited_guest_name %>
+</p>
+
+<p>
+  <strong>Plus one?:</strong>
+  <%= @rsvp.plus_one? %>
+</p>
+
+<p>
+  <strong>Plus one name:</strong>
+  <%= @rsvp.plus_one_name %>
+</p>
+
+<p>
+  <strong>Meal:</strong>
+  <%= @rsvp.meal %>
+</p>
+
+<%= link_to 'Edit', edit_rsvp_path(@rsvp) %> |
+<%= link_to 'Back', rsvps_path %>

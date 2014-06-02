@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  invited_guest_name: Guest1
+  plus_one: false
+  plus_one_name: 
+  meal: beef
+
+two:
+  invited_guest_name: Guest1
+  plus_one: true
+  plus_one_name: Guest_1_Guest
+  meal: chicken

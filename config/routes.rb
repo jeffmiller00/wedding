@@ -4,6 +4,7 @@ Wedding::Application.routes.draw do
   resources :posts
   resources :guests
   resources :guest_categories
+  resources :rsvps
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -22,13 +23,13 @@ Wedding::Application.routes.draw do
 
   get '/registries',      to: 'static_pages#registries'
 
+=begin
   get 'rsvp' => "static_pages#coming"
   get 'rsvp' => "rsvp#index"
   post 'rsvp' => "rsvp#find"
   get 'rsvp/:ext_id' => 'rsvp#view'
   patch 'rsvp/confirm' => 'rsvp#confirm'
 
-=begin
   get 'rsvp/:dig' do
     get 'rsvp/Digest::MD5.hexdigest( :dig )' => 'rsvp#view'
   end
