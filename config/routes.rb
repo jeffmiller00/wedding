@@ -23,8 +23,8 @@ Wedding::Application.routes.draw do
 
   get '/registries',      to: 'static_pages#registries'
 
+  get 'rsvp', to: 'rsvps#new', as: 'go_rsvp'
 =begin
-  get 'rsvp' => "static_pages#coming"
   get 'rsvp' => "rsvp#index"
   post 'rsvp' => "rsvp#find"
   get 'rsvp/:ext_id' => 'rsvp#view'
