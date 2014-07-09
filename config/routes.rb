@@ -22,7 +22,12 @@ Wedding::Application.routes.draw do
 
   get '/registries',      to: 'static_pages#registries'
 
-  get 'rsvp', to: 'rsvps#new', as: 'go_rsvp'
+  get  '/rsvp', to: 'rsvps#new', as: 'go_rsvp'
+  get  '/rsvps/admin/toggle/:month/:day', to: "rsvps#login"
+  post '/rsvps(.:format)', to: 'rsvps#create', as: 'rsvps'
+  get  '/rsvps/new(.:format)', to: 'rsvps#new'
+
+
 =begin
 >>>>>>> 7774fab... Minor changes prior to better work flow.
   get 'rsvp' => "rsvp#index"
