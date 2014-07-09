@@ -1,13 +1,18 @@
 class Rsvp < ActiveRecord::Base
-  before_save :cleanup_data
+  before_validation :cleanup_data
   after_save :send_to_spreadsheet
+
+  validates :invited_guest_name, presence: true
+  validates :num_beef, numericality: { greater_than_or_equal_to: 0, less_than: 10 }
+  validates :num_chicken, numericality: { only_integer: true, less_than: 10 }
+  validates :num_veg, numericality: { only_integer: true, less_than: 10 }
 
   def plus_one?
     !!self.plus_one
   end
 
   def cleanup_data
-    self.plus_one = !self.plus_one_name.empty? ? true : false
+    self.plus_one = (self.plus_one_name && !self.plus_one_name.empty?) ? true : false
     self.num_beef    ||= 0
     self.num_chicken ||= 0
     self.num_veg     ||= 0

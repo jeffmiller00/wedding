@@ -26,15 +26,15 @@
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-3">
       <%= f.label :num_beef, 'Grilled Filet', class: 'col-sm-3 control-label' %>
-      <%= f.number_field :num_beef, {in: 1..5, step: 1, class: 'form-control'} %>
+      <%= f.number_field :num_beef, {in: 0..5, step: 1, class: 'form-control'} %>
     </div>
     <div class="col-sm-3">
       <%= f.label :num_chicken, 'Chicken Breast', class: 'col-sm-3 control-label' %>
-      <%= f.number_field :num_chicken, {in: 1..5, step: 1, class: 'form-control'} %>
+      <%= f.number_field :num_chicken, {in: 0..5, step: 1, class: 'form-control'} %>
     </div>
     <div class="col-sm-3">
       <%= f.label :num_veg, 'Farmers Market Ratatouille', class: 'col-sm-12 control-label' %>
-      <%= f.number_field :num_veg, {in: 1..5, step: 1, class: 'form-control'} %>
+      <%= f.number_field :num_veg, {in: 0..5, step: 1, class: 'form-control'} %>
     </div>
   </div>
   <div class="form-group">
