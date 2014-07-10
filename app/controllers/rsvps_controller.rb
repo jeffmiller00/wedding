@@ -12,7 +12,7 @@ class RsvpsController < ApplicationController
   # POST /rsvps
   # POST /rsvps.json
   def create
-    @rsvp = Rsvp.create(rsvp_params)
+    @rsvp = Rsvp.new(rsvp_params)
 
     respond_to do |format|
       if @rsvp.valid? && @rsvp.save!
