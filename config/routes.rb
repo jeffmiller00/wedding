@@ -18,12 +18,11 @@ Wedding::Application.routes.draw do
   get '/accommodations',  to: 'static_pages#accommodations'
 
   get '/guestbook',       to: 'posts#index'
-  get '/posts/admin/toggle/:month/:day', to: "posts#login"
+  #get '/posts/admin/toggle/:month/:day', to: "posts#login"
 
   get '/registries',      to: 'static_pages#registries'
 
   get  '/rsvp', to: 'rsvps#new', as: 'go_rsvp'
-  get  '/rsvps/admin/toggle/:month/:day', to: "rsvps#login"
   post '/rsvps(.:format)', to: 'rsvps#create', as: 'rsvps'
   get  '/rsvps/new(.:format)', to: 'rsvps#new'
 
